@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Code Snippets</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/myapp/css/styles.css' %}">
+  
+</head>
+<body>
+    <div class="navbar">
+      <h1>View Code Snippets</h1>
+      <!-- <form method="get">
+          <label for="query">Search Code:</label>
+          <input type="text" name="query" id="query" value="{{ search_query }}">
+          <input type="submit" value="Search">
+      </form> -->
+
+
+      
+        
+
+
+
+    </div>
+    <div class="table">
+      <table class="container" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Created At</th>
+                <th>Address</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>{{ row.3 }}</td>
+                <td><a href="{{ row.4 }}">{{ row.4 }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+      </table>
+    </div>
+
+
+    <div class="searchBox">
+
+      <input class="searchInput"type="text" name="" placeholder="Search">
+      <button class="searchButton" href="#">
+          <i class="material-icons">
+              search
+          </i>
+      </button>
+  </div>
+
+ 
+  <div class="searchBox">
+
+    <input class="searchInput"type="text" name="" placeholder="Search">
+    <button class="searchButton" href="#">
+        <i class="material-icons">
+            search
+        </i>
+    </button>
+</div>
+
+</body>
+
+</html>

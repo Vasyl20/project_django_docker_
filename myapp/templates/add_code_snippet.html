@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Code Snippet</title>
+</head>
+<body>
+    <h1>Add Code Snippet</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="code">Code:</label><br>
+        <textarea name="code" id="code" rows="10" cols="30"></textarea><br>
+        <label for="address">Address:</label><br>
+        <input type="text" name="address" id="address"><br>
+        <label for="link">Link:</label><br>
+        <input type="url" name="link" id="link"><br><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

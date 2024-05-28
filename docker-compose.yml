@@ -1,0 +1,32 @@
+services:
+  server:
+    build: 
+      context: F:/dajngo/myproject
+      dockerfile: ./Dockerfile  # Змінено шлях до Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - F:/dajngo/myproject:/app
+    ports:
+      - 8000:8000
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    command: 
+      - '--config.file=/prometheus.yml'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./prometheus.yml:/prometheus.yml
+      - prometheus_data:/prometheus
+
+volumes:
+  grafana_data:
+  prometheus_data:

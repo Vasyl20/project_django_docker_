@@ -21,6 +21,5 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django_prometheus.urls')),
-    path('add/', views.add_code_snippet, name='add_code_snippet'),
     path('', views.view_code_snippets, name='view_code_snippets'),
 ]

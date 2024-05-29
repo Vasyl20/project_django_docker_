@@ -27,7 +27,7 @@
       <table class="container" border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Code</th>
                 <th>Created At</th>
                 <th>Address</th>
@@ -37,9 +37,9 @@
         <tbody>
             {% for row in rows %}
             <tr>
-                <td>{{ row.0|escape }}</td>
+                <!-- <td>{{ row.0|escape }}</td> -->
                 <td>{{ row.1|escape }}</td>
-                <td>{{ row.2|escape }}</td>
+                <td>{{ row.2|date:"Y-m-d H:i" }}</td>
                 <td>{{ row.3|escape }}</td>
                 <td><a href="{{ row.4 }}">{{ row.4|escape }}</a></td>
             </tr>

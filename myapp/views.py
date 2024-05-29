@@ -3,16 +3,6 @@ from django.db import connection
 from django.views.decorators.csrf import csrf_protect
 # from django_ratelimit.decorators import ratelimit  # type: ignore
 
-
-def add_code_snippet(request):
-    if request.method == "POST":
-        code = request.POST.get('code')
-        address = request.POST.get('address')
-        link = request.POST.get('link')
-        CodeSnippet.objects.create(code=code, address=address, link=link) 
-    return render(request, 'add_code_snippet.html')
-
-
 # @ratelimit(key='ip', rate='10/m', method='GET')
 @csrf_protect
 def view_code_snippets(request):

@@ -1,11 +1,11 @@
 services:
   server:
     build: 
-      context: F:/dajngo/myproject
+      context: F:/dajngo/project_docker\myproject
       dockerfile: ./Dockerfile  # Змінено шлях до Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - F:/dajngo/myproject:/app
+      - F:/dajngo/project_docker\myproject:/app
     ports:
       - 8000:8000
 

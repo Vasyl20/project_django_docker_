@@ -13,15 +13,21 @@ SECRET_KEY = 'django-insecure-u*+#yx_zs-5m+l(ijfbp2-66(-%=cgncm%^)_%-_!xa4eubny#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+import socket
+if socket.gethostname()=="Raouf-PC":
+    from base_settings import *
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'server']
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    r'F:\dajngo\myproject\myapp\static',
-]
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = False
+
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -45,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_prometheus.middleware.PrometheusAfterMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'myproject.urls'

@@ -7,26 +7,27 @@
   
 </head>
 <body>
-    <div class="navbar">
-      <h1>View Code Snippets</h1>
-      <!-- <form method="get">
-          <label for="query">Search Code:</label>
-          <input type="text" name="query" id="query" value="{{ search_query }}">
-          <input type="submit" value="Search">
-      </form> -->
 
 
-      
-        
+    <h1>View Code Snippets</h1>
+    <div class="wrap">
+        <div class="search">
+            <form method="get">
+                {% csrf_token %}
+                <input type="text" name="query" id="query"   class="searchTerm" placeholder="View Code Snippets">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
 
-
-
+        </div>
     </div>
+
     <div class="table">
       <table class="container" border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Code</th>
                 <th>Created At</th>
                 <th>Address</th>
@@ -36,11 +37,11 @@
         <tbody>
             {% for row in rows %}
             <tr>
-                <td>{{ row.0 }}</td>
-                <td>{{ row.1 }}</td>
-                <td>{{ row.2 }}</td>
-                <td>{{ row.3 }}</td>
-                <td><a href="{{ row.4 }}">{{ row.4 }}</a></td>
+                <!-- <td>{{ row.0|escape }}</td> -->
+                <td>{{ row.1|escape }}</td>
+                <td>{{ row.2|date:"Y-m-d H:i" }}</td>
+                <td>{{ row.3|escape }}</td>
+                <td><a href="{{ row.4 }}">{{ row.4|escape }}</a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -48,27 +49,8 @@
       </table>
     </div>
 
-
-    <div class="searchBox">
-
-      <input class="searchInput"type="text" name="" placeholder="Search">
-      <button class="searchButton" href="#">
-          <i class="material-icons">
-              search
-          </i>
-      </button>
-  </div>
-
  
-  <div class="searchBox">
-
-    <input class="searchInput"type="text" name="" placeholder="Search">
-    <button class="searchButton" href="#">
-        <i class="material-icons">
-            search
-        </i>
-    </button>
-</div>
+  
 
 </body>
 

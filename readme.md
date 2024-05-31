@@ -1,7 +1,7 @@
 ## Установка потрібних програм
 
-Як що потрібно показувати систему моніторингу (метрики), установіть пункт 3,
-пункт 1 обовязковий для запуска проекта 
+Як що потрібно показувати систему моніторингу (метрики) установіть пункт 2,
+пункт 1,3 обовязковий для запуска проекта 
 
 1. Установка компонентів для сайта
     1. Установка python
@@ -14,6 +14,9 @@
     аналогічне можна найти на ютубі
     3. Установка docker [Посилання на git установник](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*10x9x1*_ga*MTEyNDUzMTkwNS4xNzE2MjM3NTAy*_ga_XJWPQMJYHQ*MTcxNjk4OTUyNC4xNi4xLjE3MTY5ODk1MjguNTYuMC4w)
     4. Установка Virtualbox [Посилання на git установник](https://download.virtualbox.org/virtualbox/7.0.18/VirtualBox-7.0.18-162988-Win.exe)
+ 
+3. Установка програми для бази даних
+   1. Установка Sqlite studio [Посилання на sqlite studio установник](https://github.com/pawelsalawa/sqlitestudio/releases/download/3.4.4/SQLiteStudio-3.4.4-windows-x64-installer.exe) 
 
 ## Установка проекта і активація віртуального середовища
 

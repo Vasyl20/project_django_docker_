@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.db import connection
 from django.views.decorators.csrf import csrf_protect
-# from django_ratelimit.decorators import ratelimit  # type: ignore
+from django_ratelimit.decorators import ratelimit  # type: ignore
 
-# @ratelimit(key='ip', rate='10/m', method='GET')
+@ratelimit(key='ip', rate='10/m', method='GET')
 @csrf_protect
 def view_code_snippets(request):
     search_query = request.GET.get('query', '')
